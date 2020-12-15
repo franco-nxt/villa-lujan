@@ -1,0 +1,33 @@
+.page{
+	min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+
+    &-center{
+        display: table;
+        height: 100vh;
+        width: 100vw;
+        &-inner{
+            vertical-align: middle;
+            display: table-cell;
+        }
+    }
+
+    &-home{
+        background-image: url(../../images/bg.jpg);
+    }
+
+    &-login{
+        background-image: url(../../images/bg-login.jpg);
+    }
+
+    &-main{
+        padding-top: 15px;
+    }
+
+    @media screen and (min-width: 769px) {
+        padding-bottom: 120px;
+    }
+}
+

@@ -1,0 +1,91 @@
+.ui-datepicker {
+	background-color: #000;
+	padding: 5px;
+	position: absolute;
+	top:0;
+	left: 0;
+	&-prev,
+	&-next{
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		font-size: 0px;
+		top: 5px;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+	}
+	&-next{
+		right: 0px;
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im00MC40LDEyMS4zYy0wLjgsMC44LTEuOCwxLjItMi45LDEuMnMtMi4xLTAuNC0yLjktMS4yYy0xLjYtMS42LTEuNi00LjIgMC01LjhsNTEtNTEtNTEtNTFjLTEuNi0xLjYtMS42LTQuMiAwLTUuOCAxLjYtMS42IDQuMi0xLjYgNS44LDBsNTMuOSw1My45YzEuNiwxLjYgMS42LDQuMiAwLDUuOGwtNTMuOSw1My45eiIgZmlsbD0iI0ZGRkZGRiIvPgogIDwvZz4KPC9zdmc+Cg==);
+	}
+	&-prev{
+		left: 0px;
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im04OC42LDEyMS4zYzAuOCwwLjggMS44LDEuMiAyLjksMS4yczIuMS0wLjQgMi45LTEuMmMxLjYtMS42IDEuNi00LjIgMC01LjhsLTUxLTUxIDUxLTUxYzEuNi0xLjYgMS42LTQuMiAwLTUuOHMtNC4yLTEuNi01LjgsMGwtNTQsNTMuOWMtMS42LDEuNi0xLjYsNC4yIDAsNS44bDU0LDUzLjl6IiBmaWxsPSIjRkZGRkZGIi8+CiAgPC9nPgo8L3N2Zz4K);
+	}
+	&-title{
+		padding-bottom: 5px;
+		line-height: 30px;
+		margin-left: 30px;
+		margin-right: 30px;
+		color: #FFF;
+		font-weight: normal;
+	}
+	&-unselectable{
+		&.ui-state-disabled{
+			span.ui-state-default{
+				display: inline-block;
+				height: 29px;
+				width: 29px;
+				background-color: #FFF;
+				border-radius: 50%;
+				line-height: 30px;
+				overflow: hidden;
+				padding: 0 !important;
+				text-align: center;
+				text-decoration: none;
+				color: #000;
+				opacity: .5;
+				vertical-align: middle;
+			}
+		}
+	} 
+	&-calendar{
+		th{
+			color: #FFF;
+			font-weight: normal;
+			padding: 0!important;
+		}
+		a{
+			display: inline-block;
+			height: 29px;
+			width: 29px;
+			border-radius: 50%;
+			line-height: 30px;
+			overflow: hidden;
+			cursor: pointer;
+			padding: 0 !important;
+			text-align: center;
+			text-decoration: none;
+			vertical-align: middle;
+			&.ui-state{
+				&-default{
+					color: #000;
+					background-color: #FFF;
+				}
+				&-active{
+					color: #FFF;
+					background-color: #c63;
+				}
+				&-highlight{
+
+				}
+			}
+		}
+	}
+
+	&-range *{
+		color: #FFF !important;
+		background-color: #c63 !important;
+	}
+}

@@ -1,0 +1,25 @@
+.txt{
+	&-left{
+		text-align: left;
+	}
+	&-right{
+		text-align: right;
+	} 
+	&-center{
+		text-align: center;
+	}
+}
+
+.clear{
+	clear: both;
+	@include clearfix();
+}
+
+.float{
+	&-right{
+		float: right;
+	}
+	&-left{
+		float: left;
+	}
+}

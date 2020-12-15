@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+@import 'utils';
+@import 'fonts';
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+@import 'components/page';
+@import 'components/grid';
+@import 'components/form';
+@import 'components/navbar';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/calendar';
+@import 'components/msg';
+@import 'components/date-picker';
+@import 'components/table';
+@import 'components/booking';
+@import 'pages/login';

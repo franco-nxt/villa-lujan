@@ -1,0 +1,148 @@
+.navbar{
+	background: #000;
+	display: table;
+	width: 100%;
+	position: relative;
+	&__brand{
+		height: 60px;
+		padding: 5px;
+		display: table-cell;
+		img{
+			display: block;
+		}
+	}
+	&__collapse{
+		display: none;
+		z-index: 1;
+		position: absolute;
+		width: 100%;
+		top: 100%;
+		left: 0;
+		background-color: #000;
+		padding-bottom: 15px;
+		ul{
+			// padding: 0;
+			margin: 0;
+		}
+		li{
+			padding-left: 15px;
+			display: block;
+			list-style: none;
+		}
+		a{
+			padding: 5px 10px;
+			display: inline-block;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			&:hover{
+				background: #cd6e48 !important;
+			}
+		}
+	}
+	&__toggle{
+		display: inline-block;
+		padding: 5px;
+		&-wrap{
+			width: 60px;
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		img{
+			display: block;
+		}
+	}
+	&__item{
+		> img{
+			display: none;
+		}
+		&-menu{
+			padding-left: 20px;
+			padding-right: 20px;
+			> li{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-bottom: solid 1px #cd6e48;
+				> a{
+					color:  #cd6e48;
+				}
+			}
+		}
+	}
+	img{
+		line-height: 1;
+		height: 100%;
+		max-width: 100%;
+	}
+
+	@media screen and (min-width: 769px) {
+		padding-left: 25px;
+		padding-right: 25px;
+		&__brand{
+			height: auto;
+			padding: 10px;
+		}
+		&__collapse{
+			padding: 10px;
+			text-align: right;
+			background: initial;
+			position: relative;
+			display: table-cell !important;
+			vertical-align: middle;
+			width: auto;
+			ul{
+				padding: 0;
+			}
+		}
+		&__item{
+			> img{
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			&-menu{
+				display: inline-block;
+				& + &{
+					margin-left: 5px;
+				}
+				&:hover{
+					a{
+						background-color: #212121;
+					}
+				}
+				li{
+					border-bottom: none;
+					position: relative;
+					padding: 0;
+					ul{
+						display: none;
+						position: absolute;
+						a{
+							font-size: 14px;
+						}
+					}
+					&:hover{
+						> ul{
+							display: block;
+						}
+					}
+					> a{
+						color: #FFF;
+					}
+					a{
+						white-space: nowrap;
+						line-height: 25px;
+						text-align: left;
+						display: block;
+					}
+				}
+			}
+		}
+		&__toggle{
+			&-wrap{
+				display: none;
+			}
+		}
+	}
+}

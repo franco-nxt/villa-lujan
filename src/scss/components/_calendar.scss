@@ -1,0 +1,154 @@
+.calendar{
+	// color: red;
+	@include clearfix();
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	min-height: 335px;	
+	@include center();
+	*{
+		user-select: none;
+	}
+	input{
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+	}
+	@media screen and (min-width: 50*7px) {
+		max-width: 40*7px;
+	}
+	@media screen and (min-width: 768px) {
+		// margin-right: 0;
+	}
+
+	&__col{
+		width: 14.08%;
+		display: block;
+		float: left;
+		text-align: center;
+		min-height: 30px;
+	}
+	&__week{
+		// text-align: center;
+		color: #FFF;
+		line-height: 35px;
+		font-weight: lighter;
+	}
+	&__day{
+		font-weight: lighter;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		display: inline-block;
+		height: 30px;
+		width: 30px;
+		background-color: #FFF;
+		border-radius: 50%;
+		line-height: 30px;
+		overflow: hidden;
+		position: relative;
+		background-repeat: no-repeat;
+		&:not(&-busy):not(&-disabled) {
+			cursor: pointer;
+		}
+		&-disabled{
+			opacity: .5;			
+		}
+		&-busy{
+			color: #FFF;
+			background-color: #c63;
+		}
+		&-half-busy-1{
+			background-position: top left;
+			background-image: url(../../images/half-busy-1.png);
+		}
+		&-half-busy-0{
+			background-position: bottom right;
+			background-image: url(../../images/half-busy-0.png);
+		}
+		input:checked + & {
+			
+		    color: #FFF;
+		    background-color: #8BC34A;
+			// box-shadow: 0 0 1pt 2pt #00BCD4;
+		}
+	}
+	&__control{
+		display: table;
+		width: 100%;
+		> *{
+			display: table-cell;
+			vertical-align: middle;
+			&:last-of-type{
+				text-align: right;
+			}
+		}
+	}
+	&__span{
+		text-align: center;
+		display: block;
+		color: #FFF;
+		// font-family: 'bodoni_bk_btbook_italic';
+		font-family: 'Libre Baskerville', serif;
+font-style: italic;
+		font-size: 25px;		
+		line-height: .9em;
+	}
+	&__next,
+	&__prev{
+		outline: none;
+		height: 30px;
+		width: 30px;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		border: none;
+		background-size: contain;
+		background-position: center;
+		cursor: pointer;
+	}
+	&__next{
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im00MC40LDEyMS4zYy0wLjgsMC44LTEuOCwxLjItMi45LDEuMnMtMi4xLTAuNC0yLjktMS4yYy0xLjYtMS42LTEuNi00LjIgMC01LjhsNTEtNTEtNTEtNTFjLTEuNi0xLjYtMS42LTQuMiAwLTUuOCAxLjYtMS42IDQuMi0xLjYgNS44LDBsNTMuOSw1My45YzEuNiwxLjYgMS42LDQuMiAwLDUuOGwtNTMuOSw1My45eiIgZmlsbD0iI0ZGRkZGRiIvPgogIDwvZz4KPC9zdmc+Cg==);
+	}
+	&__prev{
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im04OC42LDEyMS4zYzAuOCwwLjggMS44LDEuMiAyLjksMS4yczIuMS0wLjQgMi45LTEuMmMxLjYtMS42IDEuNi00LjIgMC01LjhsLTUxLTUxIDUxLTUxYzEuNi0xLjYgMS42LTQuMiAwLTUuOHMtNC4yLTEuNi01LjgsMGwtNTQsNTMuOWMtMS42LDEuNi0xLjYsNC4yIDAsNS44bDU0LDUzLjl6IiBmaWxsPSIjRkZGRkZGIi8+CiAgPC9nPgo8L3N2Zz4K);
+	}
+}
+
+.calendar{
+	&__samples{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: -15px;
+		font-size: 18px;
+		color: #FFF;
+		text-align: center;
+	}
+
+	&__sample{
+		// font-family: 'bodoni_bk_btbook_italic';
+		font-family: 'Libre Baskerville', serif;
+font-style: italic;
+font-size: .9em;
+		line-height: 0;
+		vertical-align: text-bottom;
+		white-space: nowrap;
+		margin-left: 3px;
+		margin-right: 3px;
+		img{
+			max-height: 30px;
+			vertical-align: text-bottom;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		&__samples{
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+			// text-align: right;
+			white-space: nowrap;
+		}
+		&__sample{
+			display: inline-block;
+		}
+	}
+}

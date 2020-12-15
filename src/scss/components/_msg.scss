@@ -1,0 +1,28 @@
+.msg{
+	&-success{
+		display: block;
+		color: #FFF;
+		// font-family: 'bodoni_bk_btbook_italic';
+		font-family: 'Libre Baskerville', serif;
+font-style: italic;
+		font-size: 30px;
+		padding: 15px;
+		background-color: #c63;
+		text-align: center;
+	}
+	&-error{
+		margin: 0;
+		display: block;
+		padding: 0px 10px;
+		color: #FFF;
+		background-color: #F44336;
+		&:last-of-type{
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+		}
+		&:first-of-type{
+			padding-top: 10px;
+			margin-top: 10px;
+		}
+	}
+}
