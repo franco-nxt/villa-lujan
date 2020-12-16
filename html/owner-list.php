@@ -16,5 +16,5 @@ $owners = DB::instance()->query(sprintf("SELECT CONCAT('%s', id) as url, id, use
 </div>
 
 <script>
-	admin.usersTable({cols: [['Usuario', 'user'], ['Nombre', 'name', 'lastname'], ['Estado', 'status'], ['Telefono', 'tel']], rows: <?= json_encode($owners) ?>});
+	Admin.usersTable({cols: [['Usuario', 'user'], ['Nombre', 'name', 'lastname'], ['Estado', 'status'], ['Telefono', 'tel']], rows: <?= json_encode($owners) ?>});
 </script>
