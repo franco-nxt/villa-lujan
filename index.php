@@ -2,6 +2,8 @@
 define('__ROOT__', '/bookings');
 define('__BASEDIR__', __DIR__);
 
+header('Content-Type: text/html; charset=utf-8');
+
 include 'libs/configs.php';
 include 'libs/constans.php';
 include 'libs/functions.php';

@@ -17,7 +17,7 @@ function pre_dump(){
 
 function load_class($class_name)
 {	
-	$module = __BASEDIR__ . '/modules/' . $class_name . '.php';
+	$module = __BASEDIR__ . '/modules/' . strtolower($class_name) . '.php';
 	$class = __BASEDIR__ . '/classes/' . $class_name . '.php';
 
 	if(file_exists($class)){
