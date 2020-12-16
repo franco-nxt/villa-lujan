@@ -9,9 +9,9 @@ $('#add-guests').on('click', function(e){
 	var $guests = $('#guests-list');
 	var guests = $guests.find('input').length;
 
-	$(this).find('small').text((guests || 1) + '/25');
+	$(this).find('small').text((guests || 1) + '/13');
 
-	if(guests < 25){
+	if(guests < 13){
 		$guests.append('<label class="form-group"><span>Nombre: </span><input type="text" name="guests[]" /></label>');
 	}
 

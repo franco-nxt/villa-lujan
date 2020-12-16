@@ -3,7 +3,7 @@
 class Lodge
 {
 	public static function __callStatic($name, $arguments)
-    {
+	{
 		$user = get_user();
 
 		if(empty($user->watcher)){
@@ -11,13 +11,13 @@ class Lodge
 				_global('__NAVBAR__', 'admin');
 			}
 
-    		call_user_func_array('self::' . $name, $arguments);
+			call_user_func_array('self::' . $name, $arguments);
 		}
 		else{
 			trhow_404();
 		}
-    }
-    
+	}
+	
 	static private function index()
 	{
 		$user = get_user();
@@ -47,6 +47,10 @@ class Lodge
 
 			if (count($post->guests) < 5) {
 				throw new Exception(json_encode(['No se puede reservar el quincho para menos de 5 invitados.']));
+			}
+
+			if (count($post->guests) > 13) {
+				throw new Exception(json_encode(['No se puede reservar el quincho para más de 13 invitados.']));
 			}
 
 			foreach ($post->guests as $guest) {
@@ -141,6 +145,14 @@ class Lodge
 			if(empty($_POST['delete'])){
 
 				$post = (object) filter_input_post($rules, $alias);
+
+				if (count($post->guests) < 5) {
+					throw new Exception(json_encode(['No se puede reservar el quincho para menos de 5 invitados.']));
+				}
+	
+				if (count($post->guests) > 13) {
+					throw new Exception(json_encode(['No se puede reservar el quincho para más de 13 invitados.']));
+				}
 
 				$db->query("UPDATE bookings SET occupant_name = '{$post->name}', occupant_tel = '{$post->tel}', occupant_dni = '{$post->dni}', occupant_email = '{$post->email}' WHERE id = {$post->booking}");
 				$db->query(sprintf("UPDATE bookings_lodge SET guests = '%s' WHERE booking_id = {$post->booking}", json_encode($post->guests)));

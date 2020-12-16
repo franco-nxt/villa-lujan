@@ -34,7 +34,7 @@
 					<button class="form-btn">GUARDAR</button>
 					<form method="POST" class="clear" action="eliminar">
 						<button class="form-btn  form-btn-del" name="delete" value="<?= $booking->id ?>">ELIMINAR RESERVA</button>
-						<a href="#" class="form-link add-people" id="add-guests">AGREGAR INVITADOS <small><?= empty($guests) ? null : count($guests) . '/25' ?></small></a>
+						<a href="#" class="form-link add-people" id="add-guests">AGREGAR INVITADOS <small><?= empty($guests) ? null : count($guests) . '/13' ?></small></a>
 					</form>
 					<div class="clear" id="guests-list">
 						<?php foreach ($guests as $guest): ?>
